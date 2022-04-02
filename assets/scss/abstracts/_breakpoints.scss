@@ -1,0 +1,20 @@
+/*
+1em = 16px
+*/
+@mixin mediaQuery($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content }; // max 600px
+    }
+    @if $breakpoint == tablet-mini {
+        @media only screen and (min-width:37.6em) and (max-width: 56.2em) { @content }; // 601px - 900px
+    }
+    @if $breakpoint == tablet-pro {
+        @media only screen and (min-width:56.3em) and (max-width: 74.9em) { @content }; // 901px - 1199px
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 87.5em) { @content }; // min 1400px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content }; // min 1800px
+    }
+}
